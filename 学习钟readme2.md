@@ -1,0 +1,71 @@
+﻿===========================
+# Getting Started 
+install:[python3.11.4](https://www.python.org/downloads/)   
+
+------------------------
+## Contents
+
+* [Project Title](#Project Title)
+    * [时长档位](#时长挡位)
+    * [音乐播放](#音乐播放)
+    * [结束提示](#结束提示)
+* [Running the tests](#running-the-tests)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Authors](#authors)
+* [License](#license)
+* [Acknowlesgments](#acknowlesgments)
+------------------------
+# Project Title
+一个python应用程序，本文档讨论它们如何构建到最终计算机应用该程序的过程。
+## 时长档位
+一个番茄钟时间管理器，学习钟时长设为30min/45min/60min三档，自由选择。
+## 音乐播放
+可选择休息期间是否自动播放放松音乐，休息时间结束后，音乐自动停止。
+## 结束提示
+学习钟结束后，会有蜂鸣音提示，并且跳出弹框。
+
+------------------------
+# Running the tests
+inter:用于界面设计。   
+winsound：用于调用蜂鸣器提示音。   
+pygame:用于音乐播放。   
+time：时间相关的格式转换。
+在主函数中，利用tkinter模块布局界面、按钮、标签等组件，然后将学习钟、休息两大核心功能封装到函数中，一旦点击对应的按钮，即开启一个新线程用于执行对应的功能，同时通过全局变量thread_flag来保持永远只有主线程和功能线程2个线程，避免多次点击，产生多个线程同时运行，造成学习钟混乱。      
+  
+我们需要创建一个名为 test_tomato_clock.py的文件，然后在其中编写单元测试代码。   
+import unittest   
+from tomato clock import TomatoClockfrom time import sleep   
+class   
+TestTomatoClock(unittest.TestCase):   
+
+def setUp(self):   
+self.clock = TomatoClock()   
+def test_run(self):start time = time.time()self.clock.run()end time = time.   
+time()elapsed time = end time -start_time   
+
+      #检查是否工作了25分钟   
+self.assertAlmostEqual(elapsed time25 * 60，delta=1)      
+     
+      #检查是否有5分钟的休息时间
+ ------------------------
+# Usage
+我们创建了一个学习计时器，当用户选择一个时间后，它会开始倒计时，并在时间结束时播放一段音乐和一个提示框。但我们未能成功将其应用于小程序或创造一个软件，程序仅于未联网状态能运行于电脑。
+
+------------------------
+# Contributing
+[知乎](https://www.zhihu.com/answer/759471248)
+
+
+
+------------------------
+# Authors
+阳光四人组
+
+------------------------
+# License
+Copyright (c) 阳光四人组
+
+------------------------
+# Acknowlesgments
+CSDN、腾讯、百度。
